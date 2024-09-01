@@ -9,12 +9,19 @@ ns = Namespace("api")
 
 @ns.route("/hello")
 class Hello(Resource):
+    """
+    This is a test endpoint to check if the API is working.
+    """
+
     def get(self):
         return {"Hello": "restx"}
 
 
 @ns.route("/courses")
 class CourseListAPI(Resource):
+    """
+    This is a test endpoint to check if the API is working.
+    """
     @ns.marshal_list_with(course_model)
     def get(self):
         return Course.query.all()
